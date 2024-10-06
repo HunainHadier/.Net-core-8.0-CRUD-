@@ -1,0 +1,35 @@
+﻿@model crupapp.Models.UserReg
+
+<form action="@Url.Action("Delete")" method="post">
+    <!-- Name field -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" asp-for="NAME" value="@Model.NAME">
+
+    </div>
+
+    <!-- Email field -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="Enter your email" asp-for="EMAIL" value="@Model.EMAIL">
+
+    </div>
+
+    <div class="mb-3">
+        <label for="PHONE" class="form-label">PHONE</label>
+        <input type="text" class="form-control" placeholder="Enter your Phone" asp-for="PHONE" value="@Model.PHONE">
+
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password(Optional)</label>
+        <input type="password" class="form-control" placeholder="Enter your password" asp-for="PASSWORD" value="@Model.PASSWORD">
+
+    </div>
+
+
+
+
+    <input type="submit" value="Delete Now" class="btn btn-danger">
+</form>
+
+

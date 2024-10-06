@@ -1,0 +1,115 @@
+﻿@model IEnumerable<crupapp.Models.UserReg>
+
+<a asp-controller="Home" asp-action="Create" class="btn btn-primary">
+    ADD USER
+</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">PHONE</th>
+            <th scope="col">EDIT</th>
+            <th scope="col">DELETE</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var data in Model){
+        <tr>
+            <th scope="row">@data.ID</th>
+            <td>@data.NAME</td>
+            <td>@data.EMAIL</td>
+            <td>@data.PHONE</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@data.ID" class="btn btn-info">Edit Data</a>
+
+                </td>
+
+                <td>
+                    <a asp-action="delete" asp-controller="Home" asp-route-id="@data.ID" class="btn btn-info">Delete Data</a>
+
+                </td>
+
+        </tr>
+        }
+           </tbody>
+</table>
+@if (TempData["successmsg"] != null)
+{
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+            Data is successfully saved
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div>
+            Data is not saved
+        </div>
+    </div>
+}
+
+
+@if (TempData["updatedmsg"] != null)
+{
+
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+            Data is successfully Update
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div>
+            Data is not Update
+        </div>
+    </div>
+}
+
+
+
+
+@if (TempData["deletemsg"] != null)
+{
+
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+            Data is successfully Delete
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div>
+            Data is not Delete
+        </div>
+    </div>
+}
+
+
+

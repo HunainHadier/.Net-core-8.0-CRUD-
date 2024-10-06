@@ -1,0 +1,38 @@
+﻿@model crupapp.Models.UserReg
+
+<form action="@Url.Action("Create")" method="post">
+    <!-- Name field -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" asp-for="NAME">
+        <span asp-validation-for="NAME" class="text-danger"></span>
+    </div>
+
+    <!-- Email field -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="Enter your email" asp-for="EMAIL">
+        <span asp-validation-for="EMAIL" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" class="form-control" placeholder="Enter your password" asp-for="PASSWORD">
+        <span asp-validation-for="PASSWORD" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="Phone" class="form-label">PHONE</label>
+        <input type="text" class="form-control" placeholder="Enter your Phone" asp-for="PHONE">
+        <spasn asp-validation-for="PHONE" class="text-danger"></spasn>
+    </div>
+
+
+
+
+    <!-- Submit button -->
+    <input type="submit" value="Submit Now" class="btn btn-primary">
+</form>
+
+
